@@ -1,0 +1,110 @@
+@import 'variaveis.less';
+@import 'mapas.less';
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    background-color: #cores[fonteC];
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1024px;
+    width: @w-10;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #cores[headerBackC];
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+    }
+}
+
+
+
+.menu {
+    display: flex;
+
+    li {
+        font-weight: bold;
+        margin-left: 24px;
+
+        a {
+            color: #cores[fonteC];
+            text-decoration: none;
+        }
+    }
+}
+
+section {
+    padding: 56px 0;
+}
+
+.products {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 32.66%);
+    column-gap: 1%;
+    row-gap: 4%;
+    width: @w-10;
+}
+
+.product-item img {
+    width: @w-10;
+    border-radius: 16px;
+}
+
+.product-button {
+    display: block;
+    background-color: #cores[buttonBackC];
+    color: #cores[fonteC];
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin-top: 8px;
+    text-decoration: none;
+    &:hover {
+        background-color: #coress[buttonHoverC];
+    }
+}
+
+
+
+@media  @midiaTablet{
+    .container {
+        max-width: 80%;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
+@media @midiaMobile {
+    .products {
+        display: block;
+    }
+
+    .product-item  {
+        margin-bottom: 32px;
+    }
+}
